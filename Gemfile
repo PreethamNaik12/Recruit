@@ -23,6 +23,8 @@ gem "turbo-rails"
 
 gem 'rails_admin', '~> 3.1', '>= 3.1.1'
 
+gem 'activeadmin'
+
 gem 'devise'
 
 gem 'cancancan'
