@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  role: MyString
+  salary: 1.5
+  typeposition: MyString
+  description: MyText
+
+two:
+  role: MyString
+  salary: 1.5
+  typeposition: MyString
+  description: MyText
