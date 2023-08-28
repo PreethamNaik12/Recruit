@@ -1,0 +1,187 @@
+<%= stylesheet_link_tag 'home' %>
+<%= stylesheet_link_tag 'form_page' %>
+<%= render 'partials/navbar' %>
+
+<div class='forms_page_container'>
+
+  <h1 class='progress_heading text-center fw-bold'>Form Progess</h1>
+
+  <div class='form_progress'>
+    <div class="progress_element" id ='1'>
+      <h2 class='text-center'>1</h2>
+      <p>
+      <button class="btn btn-success" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+        <span role="status">Primary Details</span>
+      </button>
+    </div>
+    <div class="progress_element yet_to_fill" id ='2'>
+      <h2 class='text-center fw-bold'>2</h2>
+      <p>Educational Details</p>
+    </div>
+    <div class="progress_element yet_to_fill" id ='3'>
+      <h2 class='text-center '>3</h2>
+      <p>Payment</p>
+    </div>
+    <div class="progress_element yet_to_fill" id ='4'>
+      <h2 class='text-center'>4</h2>
+      <p>Submit</p>
+    </div>
+  </div>
+  
+  <div class='body_section'>
+    <div id='the_left'>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text-fill" viewBox="0 0 16 16" id='svg_apply'>
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/>
+          </svg>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Profile</h3>
+        <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Basic Info
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Role</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+        <div class="d-grid gap-2 col-6 mx-auto mt-3">
+          <button class="btn btn-primary" type="button">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Form Completion
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Credits</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Role</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>
+        
+      </div>
+    </div>
+    <div id='the_form'>
+      <form class="row g-3">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="inputEmail4" placeholder="First">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="inputPassword4" placeholder="Name">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputAddress" placeholder="myemail@gmail.com">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-primary" type="button">Button</button>
+    </div>
+</form>
+    </div>
+    <div id='the_right'>
+      <div class="list-group mx-2">
+        <button type="button" class="list-group-item disabled list-group-item-action active" aria-current="true">
+          <h5 class="text-center">Instructions</h5>
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<script>//to truncate the text in the announcement section
+function truncateParagraphs(elementSelector, maxLength) {
+  const elements = document.querySelectorAll(elementSelector);
+
+  if (elements.length === 0) {
+    console.error(`No elements found with selector '${elementSelector}'.`);
+    return;
+  }
+
+  elements.forEach(element => {
+    const text = element.textContent.trim();
+
+    if (text.length > maxLength) {
+      const truncatedText = text.slice(0, maxLength) + '...';
+      element.textContent = truncatedText;
+    }
+  });
+}
+
+// Usage
+truncateParagraphs('.font_size_15', 75); // Truncate text inside elements with class 'font_size_15' to 50 characters
+truncateParagraphs('.news_link', 30); // Truncate text inside elements with class 'new_link' to 50 characters
+
+
+</script>
+
+<script> //to toggle the updates tab in phone view
+    let updates = document.getElementById('updates');
+    let updates_tab = document.getElementById('updates_tab');
+
+    updates.addEventListener('click', function(){
+        updates_tab.classList.toggle('vis');
+    })
+</script>
