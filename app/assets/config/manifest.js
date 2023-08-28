@@ -5,3 +5,7 @@
 //= link auth.css
 //= link home.css
 //= link application.css
+//= link new_nav.css
+//= link new_navResp.css
+//= link form_page.css
+//= link myApp.css

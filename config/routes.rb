@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/myadmin', as: 'rails_admin'
   devise_for :users
  get 'home/index'
+ get 'home/form'
+ get 'home/form2'
+ get 'home/form3'
+ get 'home/form4'
+ get 'home/myApplications'
  # root 'home#index'
  devise_scope :user do
   root to: "devise/sessions#new"
