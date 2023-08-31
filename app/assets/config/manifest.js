@@ -9,3 +9,5 @@
 //= link new_navResp.css
 //= link form_page.css
 //= link myApp.css
+//= link admin.css
+//= link edit.css
