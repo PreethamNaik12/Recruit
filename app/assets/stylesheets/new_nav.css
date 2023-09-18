@@ -91,6 +91,10 @@ dl, ol, ul {
     position: relative;
 }
 
+#log_out_mb {
+    display: none;
+}
+
 /* call to action */
 #call_to_action {
     width: 60%;
