@@ -12,6 +12,8 @@ Rails.application.routes.draw do
  get 'home/form4'
  get 'home/myApplications'
  get 'home/adminPanel'
+ get 'home/createForm'
+ get 'home/formView'
  # root 'home#index'
  devise_scope :user do
   root to: "devise/sessions#new"
