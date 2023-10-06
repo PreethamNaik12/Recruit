@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_28_132745) do
+ActiveRecord::Schema.define(version: 2023_10_06_133207) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,6 +38,38 @@ ActiveRecord::Schema.define(version: 2023_08_28_132745) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id", null: false
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "credit_answers", force: :cascade do |t|
+    t.integer "answer"
+    t.integer "credit_question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "response_id"
+    t.index ["credit_question_id"], name: "index_credit_answers_on_credit_question_id"
+    t.index ["response_id"], name: "index_credit_answers_on_response_id"
+  end
+
+  create_table "credit_questions", force: :cascade do |t|
+    t.text "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "credit_section_id", null: false
+    t.index ["credit_section_id"], name: "index_credit_questions_on_credit_section_id"
+  end
+
+  create_table "credit_sections", force: :cascade do |t|
+    t.text "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "forms", force: :cascade do |t|
     t.string "role"
     t.float "salary"
@@ -56,6 +88,14 @@ ActiveRecord::Schema.define(version: 2023_08_28_132745) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "responses", force: :cascade do |t|
+    t.integer "credits_earned"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "credit_answer_id"
+    t.index ["credit_answer_id"], name: "index_responses_on_credit_answer_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -68,4 +108,9 @@ ActiveRecord::Schema.define(version: 2023_08_28_132745) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "credit_answers", "credit_questions"
+  add_foreign_key "credit_answers", "responses"
+  add_foreign_key "credit_questions", "credit_sections"
+  add_foreign_key "responses", "credit_answers"
 end
