@@ -9,7 +9,7 @@
                 aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a href="#">
+            <a href="home/index">
                 <div class="logo-div"><%= image_tag "NITK_Emblem.png", id:'collapse_logo' %></div>
             </a>
             <div class="d-lg-flex col-lg-3 justify-content-lg-end" id="collapse_login">
@@ -17,7 +17,8 @@
                 
             </div>
             <div class="collapse navbar-collapse d-lg-flex mt-1" id="hello_1">
-                <a href="#">
+                
+                <a href='/'>
                     <div class="logo-div"><%= image_tag "NITK_Emblem.png", id:'non_collapse_logo' %></div>
                 </a>
                 <div class="navbar-nav col-lg-6 justify-content-lg-center" id="nav_grid_2">
@@ -32,6 +33,9 @@
                     </div>
                     <div class="nav-item">
                         <a class="nav-link" href="#">Apply Now</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="/home/form">form</a>
                     </div>
                         <button class="btn btn-danger" id='log_out_mb'><%= link_to 'LogOut',destroy_user_session_path,method: :delete, class:"dropdown-item profile-dropdown", id:"log-out" %></button>
                     </div>
