@@ -13,16 +13,15 @@ class CreditAnswersController < InheritedResources::Base
 
     @answers = []
 
-    credit = 10
+    credit = 0
     answer_params_array.each do |answer_param|
       permitted_params = answer_param.permit(:answer, :credit_question_id)
       answer = CreditAnswer.new(permitted_params)
-      if answer.credit_question_id == 1
-        credit = credit+20
+      if answer.credit_question_id == 1 || answer.credit_question_id == 2 || answer.credit_question_id == 4 || answer.credit_question_id == 5
+        credit = credit + (answer.answer) * 8
       end
       @answers << answer
     end
-
     response.credits_earned = credit
     response.save
 
