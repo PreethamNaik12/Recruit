@@ -1,0 +1,49 @@
+<%= stylesheet_link_tag 'createForm' %>
+
+<%= render 'partials/navbar' %>
+
+<div id='cont'>
+        <h1 class="text-center fw-bold mt-3">View Form</h1>
+    <div class="form_details">
+        <div class="quest_info mb-2">
+            <h1 class="">Associate Proffessor</h1>
+            <div><span class="fw-bold">Last Edited</span>:<span> 12/12/2021</span></div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary mx-2">Edit Form</button>
+        </div>
+    </div>
+    <div class="form view_form">
+        <p class="h3 text-center">Form Questions</p>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">First Name</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Last Name</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Age</label>
+                <input type="number" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Gender 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">Temporary Address</label>
+                <textarea class="form-control" rows="3" id="inputCity"></textarea>
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">Permanent Address</label>
+                <textarea class="form-control" rows="3" id="inputCity"></textarea>
+            </div>
+            <div class="d-grid gap-2 d-md-flex mt-3 justify-content-md-end">
+                <button type="submit" class="btn btn-primary disabled">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="text-center my-4 fw-bold">End of Form</div>
+</div>
