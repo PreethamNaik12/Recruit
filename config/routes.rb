@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'credit/Credits_page'
+  resources :responses
+  resources :credit_answers
+  resources :credit_sections
+  resources :credit_questions
+  get 'answers/new'
+  post '/answers/create', to: 'answers#create', as: 'answers_create'
+  post '/credit_answers/create', to: 'credit_answers#create', as: 'credit_answers_create'
   resources :questions
   resources :forms
   devise_for :admin_users, ActiveAdmin::Devise.config

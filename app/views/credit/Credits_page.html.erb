@@ -1,0 +1,12 @@
+<%= form_for :answers, url: answers_create_path do |form| %>
+<h1>Section 1</h1>
+<% @section.each do |section| %>
+  <% @questions.where(credit_section_id: section.id).each do |question| %>
+    <%= form.fields_for "answers[]", Answer.new(question_id: question.id) do |answer_fields| %>
+      <%= answer_fields.hidden_field :question_id %>
+      <%= answer_fields.label :content, question.title %>
+      <%= answer_fields.text_field :content, id: "answers_#{question.id}" %>
+    <% end %>
+  <% end %>
+  <%= form.submit "Create Answers" %>
+<% end %>

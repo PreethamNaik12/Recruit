@@ -1,0 +1,74 @@
+
+<%= stylesheet_link_tag "credits" %>
+<!--stylsheet imported-->
+<%= render 'partials/navbar' %>
+<!--partial for navbar-->
+
+
+<h1 class="font-jost text-center fw-bold">Credit Calculation</h1>
+
+<!--credits container div starts -->
+<div id="credits_container" class="font-jost mt-3">
+    <!--Personal details start from here-->
+    <div class="accordion" id="personal_details">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#person_detail">
+                Personal Details
+            </button>
+            </h2>
+            <div id="person_detail" class="accordion-collapse collapse show" data-bs-parent="#personal_details">
+                <div class="accordion-body">
+                    <form>
+                    <div class="mb-3">
+                        <label for="application_no" class="form-label">Application Number</label>
+                        <input type="text" class="form-control" id="application_no">
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Personal details end from here-->
+
+    <!--Questions start from here-->
+    <div>
+    <%= form_for :answers, url: credit_answers_create_path do |form| %>
+    <%@section.each do |section|%>
+    <div class="accordion mt-5" id="details">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target=<%="#questions#{section.id}"%>>
+                <span class="mr-5"><%=section.title%></span>
+                    <div class="tick_div"><%= image_tag "tick.png", class:'tick_pic'%></div>
+                </button>
+            </h2>
+            <% @questions.where(credit_section_id: section.id).each do |question| %>
+            <div id=<%="questions#{section.id}"%> class="accordion-collapse collapse" data-bs-parent="#details">
+                <div class="accordion-body">
+                <%= form.fields_for "answers[]", CreditAnswer.new(credit_question_id: question.id) do |answer_fields| %>
+                    <div class="mb-3">
+                      <%= answer_fields.hidden_field :credit_question_id, class:"form-label" %>
+                      <%= answer_fields.label :answer, question.title, class:"form-label", for:"answers_#{question.id}" %>
+                      <%= answer_fields.text_field :answer, id: "answers_#{question.id}",class: "form-control"%>
+                    </div>
+                  <% end %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <%end%>
+    <%= form.submit "Create Answers", class:"btn btn-success" %>
+    <% end %>
+    </div>
+    <!--Questions end here-->
+
+</div>
+
+<!--credits container div ends -->
+
