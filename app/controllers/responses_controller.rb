@@ -1,4 +1,8 @@
 class ResponsesController < InheritedResources::Base
+  def new
+    puts "Reached the new action"
+    @response=Response.find(params[:id])
+  end
 
   private
 

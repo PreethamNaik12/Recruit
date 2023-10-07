@@ -10,7 +10,7 @@
 <!--credits container div starts -->
 <div id="credits_container" class="font-jost mt-3">
     <!--Personal details start from here-->
-    <%# <div class="accordion" id="personal_details">
+    <div class="accordion" id="personal_details">
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#person_detail">
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-    </div> %>
+    </div>
     <!--Personal details end from here-->
 
     <!--Questions start from here-->
@@ -54,7 +54,7 @@
                     <div class="mb-3">
                       <%= answer_fields.hidden_field :credit_question_id, class:"form-label" %>
                       <%= answer_fields.label :answer, question.title, class:"form-label", for:"answers_#{question.id}" %>
-                      <%= answer_fields.text_field :answer, id: "answers_#{question.id}",class: "form-control" %>
+                      <%= answer_fields.text_field :answer, id: "answers_#{question.id}",class: "form-control"%>
                     </div>
                   <% end %>
                 </div>

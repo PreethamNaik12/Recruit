@@ -1,5 +1,15 @@
-<h1>New Response</h1>
+<%= stylesheet_link_tag "credits" %>
+<%= render 'partials/navbar' %>
+<h1 class="font-jost text-center fw-bold">Results</h1>
 
-<%= render 'form', response: @response %>
+<div id="credits_container" class="font-jost mt-3">
+    <div>
+        <%if @response.credits_earned >= 1000%>
+        <%= "Selected, with #{@response.credits_earned} credits"%>
+        <% else %>
+        <%="Rejected, you fell #{1000 -@response.credits_earned} credits short from 1000 :("%>
+        <%end%>
+    </div>
 
-<%= link_to 'Back', responses_path %>
+</div>
+

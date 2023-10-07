@@ -17,9 +17,19 @@ class CreditAnswersController < InheritedResources::Base
     answer_params_array.each do |answer_param|
       permitted_params = answer_param.permit(:answer, :credit_question_id)
       answer = CreditAnswer.new(permitted_params)
-      if answer.credit_question_id == 1 || answer.credit_question_id == 2 || answer.credit_question_id == 4 || answer.credit_question_id == 5
-        credit = credit + (answer.answer) * 8
+      if answer.answer == nil
+        answer.answer =0
       end
+      #credit calculations
+      if answer.credit_question_id == 1 || answer.credit_question_id == 2 || answer.credit_question_id == 3 || answer.credit_question_id == 4
+        credit = credit + (answer.answer) * 8
+      elsif answer.credit_question_id == 5
+        credit = credit +(answer.answer) * 2
+      elsif (answer.credit_question_id == 6 || answer.credit_question_id == 7 || answer.credit_question_id == 8 || answer.credit_question_id == 9
+        answer.credit_question_id == 10 || answer.credit_question_id == 11 || answer.credit_question_id == 12 || answer.credit_question_id == 13)
+        credit = credit +(answer.answer) * 8
+      end
+
       @answers << answer
     end
     response.credits_earned = credit
@@ -27,7 +37,7 @@ class CreditAnswersController < InheritedResources::Base
 
     if @answers.all? { |answer| answer.valid? }
       @answers.each(&:save)
-      redirect_to credit_answers_path, notice: 'Answers were successfully created.'
+      redirect_to new_response_path(id: response.id), notice: 'Answers were successfully created.'
     else
       render :new
     end
