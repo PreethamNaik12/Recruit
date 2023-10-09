@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'answers/new'
   post '/answers/create', to: 'answers#create', as: 'answers_create'
   post '/credit_answers/create', to: 'credit_answers#create', as: 'credit_answers_create'
+  post '/questions/create', to: 'questions#create', as: 'questions_create'
   resources :questions
   resources :forms
   devise_for :admin_users, ActiveAdmin::Devise.config
