@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_07_101734) do
+ActiveRecord::Schema.define(version: 2023_10_08_172544) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 2023_10_07_101734) do
     t.text "information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "form_id"
+    t.index ["form_id"], name: "index_questions_on_form_id"
   end
 
   create_table "responses", force: :cascade do |t|
@@ -114,5 +116,6 @@ ActiveRecord::Schema.define(version: 2023_10_07_101734) do
   add_foreign_key "credit_answers", "credit_questions"
   add_foreign_key "credit_answers", "responses"
   add_foreign_key "credit_questions", "credit_sections"
+  add_foreign_key "questions", "forms"
   add_foreign_key "responses", "credit_answers"
 end

@@ -1,5 +1,16 @@
-<h1>New Form</h1>
+<%= stylesheet_link_tag 'home' %>
+<%= stylesheet_link_tag 'form_page' %>
+<%= render 'partials/navbar' %>
 
-<%= render 'form', form: @form %>
-
-<%= link_to 'Back', forms_path %>
+<h1>The form update</h1>
+<%= @form.role%>
+<div>
+    <% @questions.where(form_id: @id_form).each do |question| %>
+    <%= question.title %>
+    <%end%>
+</div>
+<%= form_for :question, url: questions_create_path do |form| %>
+<%= form.text_field :title%>
+<%= form.hidden_field :form_id, value: @id_form%>
+<%= form.submit%>
+<%end%>
