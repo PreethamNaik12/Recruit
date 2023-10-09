@@ -11,3 +11,5 @@
 //= link myApp.css
 //= link admin.css
 //= link edit.css
+//= link createForm.css
+//= link credits.css

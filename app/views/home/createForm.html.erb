@@ -1,0 +1,71 @@
+<%= stylesheet_link_tag 'createForm' %>
+
+<%= render 'partials/navbar' %>
+
+<div id='cont'>
+        <h1 class="text-center fw-bold mt-3">Create Form</h1>
+    <div class="form_details">
+        <div class="quest_info mb-2">
+            <h1 class="">Associate Proffessor</h1>
+            <div><span class="fw-bold">Last Edited</span>:<span> 12/12/2021</span></div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary mx-2">Add Question</button>
+            <button class="btn btn-success" type="button">Save Form</button>
+        </div>
+    </div>
+    <div class="form">
+        <p class="h3 text-center">Form Questions</p>
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item d-flex justify-content-between align-items-start element">
+                <div class="ms-2 me-auto ques_div">
+                    <div class="fw-bold"><span >First Name</span><span class=" mx-2 badge bg-primary rounded-pill">Text</span></div>
+                    <div class="btns">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-primary">Show</button>
+                            <button type="button" class="btn btn-outline-danger">Edit</button>
+                            <button type="button" class="btn btn-outline-success">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto ques_div">
+                    <div class="fw-bold h-3">Last Name<span class=" mx-2 badge bg-primary rounded-pill">Text</span></div>
+                    <div class="btns">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-primary">Show</button>
+                            <button type="button" class="btn btn-outline-danger">Edit</button>
+                            <button type="button" class="btn btn-outline-success">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto ques_div">
+                    <div class="fw-bold h-3">Age<span class=" mx-2 badge bg-primary rounded-pill">Integer</span></div>
+                    <div class="btns">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-primary">Show</button>
+                            <button type="button" class="btn btn-outline-danger">Edit</button>
+                            <button type="button" class="btn btn-outline-success">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto ques_div">
+                    <div class="fw-bold h-3">Gender<span class=" mx-2 badge bg-primary rounded-pill">Radio</span></div>
+                    <div class="btns">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-primary">Show</button>
+                            <button type="button" class="btn btn-outline-danger">Edit</button>
+                            <button type="button" class="btn btn-outline-success">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+        <div class="text-center my-4 fw-bold">End of Form</div>
+    </div>
+</div>

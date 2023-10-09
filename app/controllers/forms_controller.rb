@@ -1,4 +1,5 @@
 class FormsController < InheritedResources::Base
+<<<<<<< HEAD
 
   before_action :set_form, only: %i[ show edit update]
 
@@ -56,6 +57,15 @@ class FormsController < InheritedResources::Base
       format.html { redirect_to forms_url, notice: "Form was successfully destroyed." }
       format.json { head :no_content }
     end
+=======
+  def new
+    puts "Reached the new action"
+    @id_form = 1
+    id = @id_form
+    @form=Form.find(id)
+    @questions = Question.all
+    @quetion = Question.new
+>>>>>>> b63d198afd1cd53145b0378f28d233b4563781bf
   end
   private
 
