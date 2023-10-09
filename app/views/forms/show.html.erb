@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Role:</strong>
-  <%= @form.role %>
+  <strong>Title:</strong>
+  <%= @form.title %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @form.position %>
 </p>
 
 <p>
   <strong>Salary:</strong>
   <%= @form.salary %>
-</p>
-
-<p>
-  <strong>Typeposition:</strong>
-  <%= @form.typeposition %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @form.description %>
 </p>
 
 <%= link_to 'Edit', edit_form_path(@form) %> |

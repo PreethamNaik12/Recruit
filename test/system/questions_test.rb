@@ -14,10 +14,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "New Question"
 
-    fill_in "Information", with: @question.information
-    check "Required" if @question.required
-    fill_in "Title", with: @question.title
-    fill_in "Typequestion", with: @question.typequestion
+    fill_in "Content", with: @question.content
     click_on "Create Question"
 
     assert_text "Question was successfully created"
@@ -28,10 +25,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "Edit", match: :first
 
-    fill_in "Information", with: @question.information
-    check "Required" if @question.required
-    fill_in "Title", with: @question.title
-    fill_in "Typequestion", with: @question.typequestion
+    fill_in "Content", with: @question.content
     click_on "Update Question"
 
     assert_text "Question was successfully updated"

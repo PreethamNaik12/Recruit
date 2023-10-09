@@ -16,48 +16,25 @@
                     </div>
                 </div>
                 <ul class="list-group list-group-flush li_hover">
+
+                 <% Notification.all.each do |notify|%>
+
+
                     <li class="list-group-item">
                         <div class='announcement_element'>
-                            <small class='fs-sm'>Date</small> | <small>1 Min read</small>
-                            <p class='fw-bold'><a class='news_link' href="#">Announcement element heading</a></p>
-                            <p class='font_size_15'>The new body goes here and very well explain the updates. Will redirect to some other page when clicked</p>
+                            <small class='fs-sm'><%= notify.created_at.strftime("%d/%m/%y")%></small> | <small><%= notify.readtime %> Min read</small>
+                            <p class='fw-bold'><a class='news_link' href="#"><%= notify.heading %></a></p>
+                            <p class='font_size_15'><%= notify.description%></p>
                         </div>
                     </li>
-                    <li class="list-group-item">
-                        <div class='announcement_element'>
-                            <small class='fs-sm'>Date</small> | <small>1 Min read</small>
-                            <p class='fw-bold'><a class='news_link' href="#">Announcement element heading fo the new</a></p>
-                            <p class='font_size_15'>The new body goes here and very well explain the updates. Will redirect to some other page when clicked</p>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class='announcement_element'>
-                            <small class='fs-sm'>Date</small> | <small>1 Min read</small>
-                            <p class='fw-bold'><a class='news_link' href="#">Announcement element heading fo the new</a></p>
-                            <p class='font_size_15'>The new body goes here and very well explain the updates. Will redirect to some other page when clicked</p>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class='announcement_element'>
-                            <small class='fs-sm'>Date</small> | <small>1 Min read</small>
-                            <p class='fw-bold'><a class='news_link' href="#">Announcement element heading fo the new</a></p>
-                            <p class='font_size_15'>The new body goes here and very well explain the updates. Will redirect to some other page when clicked</p>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class='announcement_element'>
-                            <small class='fs-sm'>Date</small> | <small>1 Min read</small>
-                            <p class='fw-bold'><a class='news_link' href="#">Announcement element heading fo the new</a></p>
-                            <p class='font_size_15'>The new body goes here and very well explain the updates. Will redirect to some other page when clicked</p>
-                        </div>
-                    </li>
+                    <% end %>
                 </ul>
                 <div class="card-body">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button type="button" class="btn btn-primary btn-sm">All Notifications</button>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>

@@ -14,10 +14,9 @@ class FormsTest < ApplicationSystemTestCase
     visit forms_url
     click_on "New Form"
 
-    fill_in "Description", with: @form.description
-    fill_in "Role", with: @form.role
+    fill_in "Position", with: @form.position
     fill_in "Salary", with: @form.salary
-    fill_in "Typeposition", with: @form.typeposition
+    fill_in "Title", with: @form.title
     click_on "Create Form"
 
     assert_text "Form was successfully created"
@@ -28,10 +27,9 @@ class FormsTest < ApplicationSystemTestCase
     visit forms_url
     click_on "Edit", match: :first
 
-    fill_in "Description", with: @form.description
-    fill_in "Role", with: @form.role
+    fill_in "Position", with: @form.position
     fill_in "Salary", with: @form.salary
-    fill_in "Typeposition", with: @form.typeposition
+    fill_in "Title", with: @form.title
     click_on "Update Form"
 
     assert_text "Form was successfully updated"

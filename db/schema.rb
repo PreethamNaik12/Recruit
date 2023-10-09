@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_28_132745) do
+ActiveRecord::Schema.define(version: 2023_09_18_090357) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -39,21 +39,43 @@ ActiveRecord::Schema.define(version: 2023_08_28_132745) do
   end
 
   create_table "forms", force: :cascade do |t|
-    t.string "role"
-    t.float "salary"
-    t.string "typeposition"
+    t.string "title"
+    t.string "position"
+    t.integer "salary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "readtime"
+    t.text "heading"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "title"
-    t.boolean "required"
-    t.string "typequestion"
-    t.text "information"
+  create_table "options", force: :cascade do |t|
+    t.text "response"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "question_id"
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "question_types", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "form_id"
+    t.integer "question_type_id"
+    t.index ["form_id"], name: "index_questions_on_form_id"
+    t.index ["question_type_id"], name: "index_questions_on_question_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,4 +90,7 @@ ActiveRecord::Schema.define(version: 2023_08_28_132745) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "options", "questions"
+  add_foreign_key "questions", "forms"
+  add_foreign_key "questions", "question_types"
 end

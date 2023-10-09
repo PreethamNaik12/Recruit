@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :notifications
+  resources :options
   resources :questions
+  resources :question_types
   resources :forms
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

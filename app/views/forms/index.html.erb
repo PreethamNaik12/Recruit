@@ -5,10 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Role</th>
+      <th>Title</th>
+      <th>Position</th>
       <th>Salary</th>
-      <th>Typeposition</th>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +15,9 @@
   <tbody>
     <% @forms.each do |form| %>
       <tr>
-        <td><%= form.role %></td>
+        <td><%= form.title %></td>
+        <td><%= form.position %></td>
         <td><%= form.salary %></td>
-        <td><%= form.typeposition %></td>
-        <td><%= form.description %></td>
         <td><%= link_to 'Show', form %></td>
         <td><%= link_to 'Edit', edit_form_path(form) %></td>
         <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>

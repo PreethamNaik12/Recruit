@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  readtime: 1
+  heading: MyText
+  description: MyText
+
+two:
+  readtime: 1
+  heading: MyText
+  description: MyText
